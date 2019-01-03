@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Exercise01.Models
 {
-    public class Donor
+    public class User
     {
         /// <summary>
         /// Gets or sets the Name.

@@ -10,7 +10,7 @@ namespace Exercise01.Services
 {
     public class EmailService
     {
-        public Email SaveEmail()
+        public void SaveEmail()
         {
             var email = new Email();
             Console.WriteLine("Enter From Email:");
@@ -21,12 +21,13 @@ namespace Exercise01.Services
             email.Subject = Console.ReadLine();
             Console.WriteLine("Enter Body");
             email.Body = Console.ReadLine();
-            return email;
+
+            this.LogEmailToFile("email sent", email);
         }
 
         public void LogEmailToFile(string fileName, Email email)
         {
-            using (StreamWriter writer = new StreamWriter("important.txt"))
+            using (StreamWriter writer = new StreamWriter(fileName + ".txt"))
             {
                 writer.WriteLine("From Email : " + email.FromEmail);
                 writer.WriteLine("To Email : " + email.ToEmail);

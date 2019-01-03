@@ -12,7 +12,7 @@ namespace Exercise01
     public class Program
     {
         public static EmailService emailService = new EmailService();
-        public static DonorService donorService = new DonorService();
+        public static UserService userService = new UserService();
 
         public static void Main(string[] args)
         {
@@ -23,11 +23,11 @@ namespace Exercise01
             var optionChoosen = Convert.ToInt32(Console.ReadLine());
             if (optionChoosen == 1)
             {
-                donorService.LogDonorToFile("user created", donorService.SaveDonorDetails());
+                userService.CreateUser();
             }
             else if(optionChoosen == 2)
             {
-                emailService.LogEmailToFile("email sent", emailService.SaveEmail());
+                emailService.SaveEmail();
             }
         }
     }
